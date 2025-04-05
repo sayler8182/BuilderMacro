@@ -232,7 +232,7 @@ extension BuilderBodyGenerator {
         } else if variable.isSet {
             result += " = []"
         } else if variable.isDate {
-            result += " = Date()" // swiftlint:disable:this date_usage
+            result += " = Date()"
         } 
 
         return result

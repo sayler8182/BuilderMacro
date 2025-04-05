@@ -2,7 +2,7 @@ import Foundation
 
 public enum BuilderMacroArgs {
     public struct Config {
-        public struct Options: OptionSet, Hashable {
+        public struct Options: OptionSet, Hashable, Sendable {
             public static let build = Options(rawValue: 1 << 1)
             public static let staticBuild = Options(rawValue: 1 << 2)
             public static let tryBuild = Options(rawValue: 1 << 3)

@@ -4,13 +4,13 @@ import SwiftSyntaxMacros
 
 enum BuilderMacroArgs {
     struct Config {
-        struct Options: OptionSet, Hashable {
+        struct Options: OptionSet, Hashable, Sendable {
             static let build = Options(rawValue: 1 << 1)
             static let staticBuild = Options(rawValue: 1 << 2)
             static let tryBuild = Options(rawValue: 1 << 3)
             static let staticTryBuild = Options(rawValue: 1 << 4)
 
-            static var standard: Options = [.build, .staticBuild, .tryBuild, .staticTryBuild]
+            static var standard: Options { [.build, .staticBuild, .tryBuild, .staticTryBuild] }
 
             let rawValue: Int
 
